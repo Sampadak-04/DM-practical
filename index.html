@@ -17,8 +17,8 @@
 	border: 5px solid #5CB3FF;
 	padding: 50px;
 	margin-bottom: 300px;
-	margin-right: 300px;
-	margin-left: 300px;
+	margin-right: 4500px;
+	margin-left: 450px;
 	margin-top: 150px;
 }
 
@@ -58,13 +58,6 @@ body {
 			</h3>
 			<br> <input class="form-control input-lg" id="inputlg" type="submit" value="Login">
 		</form>
-		<%
-		if (!session.isNew()) {
-			String msg = (String) session.getAttribute("msg");
-			out.print("<div class='alert alert-info'><strong></strong>" + msg + "</div>");
-		}
-		session.invalidate();
-		%>
 	</div>
 
   gtag('config', 'G-0S802FWHXQ');
