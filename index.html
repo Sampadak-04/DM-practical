@@ -1,40 +1,71 @@
 <html>
-  <head>
-    <style>
-      #div1{
-        align : center;
-        background-color : yellow;
-        margin-left : 500;
-        margin-right : 500;
-        margin-top : 100;
-        border : 2px solid black;
-        padding : 20px;
-      }
-      body{
-        background-color : lightblue;
-      }
-    </style>
-  </head>
-  <body>
-<form>
-  <div class="mb-3" align = "center" id = "div1">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><br><br>
-    <div id="emailHelp" class="form-text">We'll never share ur email with anyone else.</div>
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"><br><br>
-    </div>
-  <div class="mb-3 form-check" align = "center">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary" align = "center">Submit</button>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0S802FWHXQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+#div1 {
+	background-color: #f8f8f8;
+	opacity: 1 width: 300px;
+	border: 5px solid #5CB3FF;
+	padding: 50px;
+	margin-bottom: 300px;
+	margin-right: 300px;
+	margin-left: 300px;
+	margin-top: 150px;
+}
+
+input[type=submit] {
+	background-color: silver;
+	border: none;
+	text-decoration: blink;
+	color: blue;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	cursor: inherit;
+	border: 1px solid blue;
+}
+
+body {
+	background: #728FCE;
+	font-family: 'Roboto', sans-serif;
+}
+</style>
+</head>
+<body>
+	<div id="div1" align="center">
+		<form action="LoginController">
+			<h2>
+				<span class="label label-info">Username</span>
+			</h2>
+			<h3>
+				<input class="form-control input-lg" id="inputlg" type="text"
+					name="uname">
+			</h3>
+			<br>
+			<h2>
+				<span class="label label-info">Password</span>
+			</h2>
+			<h3>
+				<input class="form-control input-lg" id="inputlg" type="password" name="pass" class="form-control" placeholder="Password" required>
+			</h3>
+			<br> <input class="form-control input-lg" id="inputlg" type="submit" value="Login">
+		</form>
+		<%
+		if (!session.isNew()) {
+			String msg = (String) session.getAttribute("msg");
+			out.print("<div class='alert alert-info'><strong></strong>" + msg + "</div>");
+		}
+		session.invalidate();
+		%>
+	</div>
 
   gtag('config', 'G-0S802FWHXQ');
 </script>
